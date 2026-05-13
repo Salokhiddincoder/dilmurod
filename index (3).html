@@ -254,20 +254,51 @@
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-  /* ===== MOBIL ===== */
-  @media(max-width:720px){
-    .container{padding:20px 18px 60px}
-    h1{font-size:24px;margin-bottom:32px}
-    .hero{grid-template-columns:1fr;gap:24px}
-    .features{order:2}
-    .hero-image{order:1;max-width:320px;margin:0 auto}
-    .feature-card{padding:14px 16px;gap:12px}
-    .feature-icon{width:34px;height:34px}
-    .feature-icon svg{width:18px;height:18px}
-    .feature-text{font-size:14px;padding-top:5px}
-    .timer{font-size:22px;padding:12px 24px}
-    .cta-btn{font-size:17px;padding:20px 36px;width:100%}
+/* ===== MOBIL ===== */
+@media(max-width:720px){
+  .container{padding:20px 18px 60px}
+  h1{font-size:24px;margin-bottom:32px}
+  
+  /* Hero: ustun ko'rinishida, rasm tepada */
+  .hero{
+    grid-template-columns:1fr;
+    gap:32px;
   }
+  
+  /* RASMNI TEPAGA, TEKSTLARNI PASTGA */
+  .hero-image{
+    order:1;
+    max-width:280px;
+    margin:0 auto;
+    aspect-ratio:1/1;
+  }
+  .features{
+    order:2;
+    position:relative;
+    z-index:5;
+  }
+  
+  /* Dekorativ aylanalar tashqariga chiqmasin */
+  .hero-image::before{
+    inset:0;
+    filter:blur(15px);
+  }
+  .hero-image::after{
+    inset:5%;
+  }
+  
+  .feature-card{
+    padding:14px 16px;
+    gap:12px;
+    background:rgba(15,15,15,.85);
+    backdrop-filter:blur(10px);
+  }
+  .feature-icon{width:34px;height:34px}
+  .feature-icon svg{width:18px;height:18px}
+  .feature-text{font-size:14px;padding-top:5px}
+  .timer{font-size:22px;padding:12px 24px}
+  .cta-btn{font-size:17px;padding:20px 36px;width:100%}
+}
 </style>
 </head>
 <body>
